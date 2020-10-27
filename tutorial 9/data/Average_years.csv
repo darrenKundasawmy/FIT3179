@@ -1,4 +1,4 @@
-﻿Country,Happiness_score,Whisker-high,Whisker-low,Dystopia (1.88) + residual,Explained by: GDP per capita,Explained by: Social support,Explained by: Healthy life expectancy,Explained by: Freedom to make life choices,Explained by: Generosity,Explained by: Perceptions of corruption
+﻿Country,happiness_score,Whisker-high,Whisker-low,Dystopia (1.88) + residual,Explained by: GDP per capita,Explained by: Social support,Explained by: Healthy life expectancy,Explained by: Freedom to make life choices,Explained by: Generosity,Explained by: Perceptions of corruption
 Finland,7.769,7.830,7.708,2.714,1.340,1.587,0.986,0.596,0.153,0.393
 Denmark,7.600,7.667,7.534,2.393,1.383,1.573,0.996,0.592,0.252,0.410
 Norway,7.554,7.616,7.492,2.241,1.488,1.582,1.028,0.603,0.271,0.341
