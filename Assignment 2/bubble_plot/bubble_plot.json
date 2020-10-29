@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "COVID-19 Cases per Country (13 Oct 2020)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/darrenKundasawmy/FIT3179/main/tutorial%209/data/Average_years.csv"
+  },
+  "params": [
+    {
+      "name": "happiness",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 8,
+        "step": 2,
+        "name": "happiness level: "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.Happiness_score > happiness"}],
+  "encoding": {
+    "x": {
+      "field": "Explained by: GDP per capita",
+      "type": "quantitative",
+      "title": "gdp per capita",
+      "axis": {"tickCount": 7}
+    },
+    "y": {
+      "field": "Explained by: Healthy life expectancy",
+      "type": "quantitative",
+      "title": "life expectancy",
+      "axis": {"tickCount": 7}
+    }
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "Happiness_score",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [2, 4, 6, 8, 10],
+            "range": [10, 50, 150, 200, 300, 400]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {"field": "Country", "type": "nominal"},
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {
+            "field": "Explained by: GDP per capita",
+            "type": "quantitative",
+            "format": ","
+          },
+          {
+            "field": "Explained by: Healthy life expectancy",
+            "type": "quantitative",
+            "format": ","
+          },
+          {"field": "Happiness_score", "type": "quantitative", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] == 'Finland' || datum['Country'] == 'Singapore' || datum['Country'] == 'Australia' || datum['Country'] == 'New Zealand' || datum['Country'] == 'Italy' || datum['Country'] == 'Malaysia' ||  datum['Country'] == 'United States'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {
+            "field": "Explained by: GDP per capita",
+            "type": "quantitative",
+            "format": ","
+          },
+          {
+            "field": "Explained by: Healthy life expectancy",
+            "type": "quantitative",
+            "format": ","
+          },
+          {"field": "Happiness_score", "type": "quantitative", "format": ","}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
