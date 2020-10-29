@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 300,
+  "height": 500,
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "values": [
+      {"year": "2015", "Happiness Score": 5.375734},
+      {"year": "2016", "Happiness Score": 5.382185},
+      {"year": "2017", "Happiness Score": 5.354019},
+      {"year": "2018", "Happiness Score": 5.375917},
+      {"year": "2019", "Happiness Score": 5.407096},
+      {"year": "2020", "Happiness Score": 5.47324}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "year", "type": "nominal", "axis": {"labelAngle": 10}},
+    "y": {
+      "field": "Happiness Score",
+      "type": "quantitative",
+      "scale": {"domain": [5, 5.5]}
+    },
+    "color": {"value": "#fdbe85"}
+  },
+  "config": {}
+}
