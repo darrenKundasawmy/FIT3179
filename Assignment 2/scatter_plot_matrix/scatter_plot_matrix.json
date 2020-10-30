@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "repeat": {
+    "row": [
+      "Ladder_score",
+      "Log_GDP_per_capita",
+      "Social_support",
+      "Healthy_life_expectancy"
+    ],
+    "column": [
+      "Healthy_life_expectancy",
+      "Social_support",
+      "Log_GDP_per_capita",
+      "Ladder_score"
+    ]
+  },
+  "spec": {
+    "data": {
+      "url": "https://raw.githubusercontent.com/darrenKundasawmy/FIT3179/main/Assignment%202/Heat_map/2020.csv"
+    },
+    "mark": "point",
+    "selection": {
+      "brush": {
+        "type": "interval",
+        "resolve": "union",
+        "on": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!",
+        "translate": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!",
+        "zoom": "wheel![event.shiftKey]"
+      },
+      "grid": {
+        "type": "interval",
+        "resolve": "global",
+        "bind": "scales",
+        "translate": "[mousedown[!event.shiftKey], window:mouseup] > window:mousemove!",
+        "zoom": "wheel![!event.shiftKey]"
+      }
+    },
+    "encoding": {
+      "x": {"field": {"repeat": "column"}, "type": "quantitative"},
+      "y": {
+        "field": {"repeat": "row"},
+        "type": "quantitative",
+        "axis": {"minExtent": 30}
+      },
+      "color": {
+        "condition": {
+          "selection": "brush",
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "value": "grey"
+      }
+    }
+  },
+  "config": {}
+}
