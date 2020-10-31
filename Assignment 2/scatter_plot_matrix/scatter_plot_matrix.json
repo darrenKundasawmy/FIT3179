@@ -2,16 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "repeat": {
     "row": [
-      "Ladder_score",
-      "Log_GDP_per_capita",
-      "Social_support",
-      "Healthy_life_expectancy"
+      "Ladder score" ,
+      "Log GDP per capita",
+      "Social support",
+      "Healthy life expectancy"
     ],
     "column": [
-      "Healthy_life_expectancy",
-      "Social_support",
-      "Log_GDP_per_capita",
-      "Ladder_score"
+      "Healthy life expectancy",
+      "Social support",
+      "Log GDP per capita",
+      "Ladder score"
     ]
   },
   "spec": {
@@ -45,7 +45,7 @@
       "color": {
         "condition": {
           "selection": "brush",
-          "field": "Origin",
+          "field": "Regional indicator",
           "type": "nominal"
         },
         "value": "grey"
