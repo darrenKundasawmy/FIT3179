@@ -36,6 +36,14 @@
   },
   "layer": [
     {
+      "selection": {
+          "continent_highlight": {
+          "type": "multi",
+          "fields": ["Regional indicator"],
+          "bind": "legend"
+        }
+      },
+
       "mark": "circle",
       "encoding": {
         "size": {
@@ -43,12 +51,17 @@
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [2, 4, 6, 8, 10],
-            "range": [10, 50, 150, 200, 300, 400]
+            "domain": [2, 4, 6],
+            "range": [10, 100, 250, 500]
           },
           "legend": {"format": ".1s"}
         },
         "color": {"field": "Regional indicator", "type": "nominal"},
+        "opacity": {
+            "condition": {"selection": "continent_highlight", "value": 0.8},
+            "value": 0.1
+        },
+
         "tooltip": [
           {"field": "Regional indicator", "type": "nominal"},
           {
