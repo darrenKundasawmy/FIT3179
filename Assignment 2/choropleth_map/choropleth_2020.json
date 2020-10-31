@@ -8,15 +8,16 @@
     "url": "https://raw.githubusercontent.com/darrenKundasawmy/FIT3179/main/Assignment%202/choropleth_map/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
+  
   "params": [
     {
       "name": "happiness",
       "value": 0,
       "bind": {
         "input": "range",
-        "min": 1,
+        "min": 0,
         "max": 7,
-        "step": 2,
+        "step": 1,
         "name": "happiness level: "
       }
     }
@@ -39,10 +40,10 @@
     "color": {
       "field": "Ladder_score",
       "type": "quantitative",
-      "scale": {
+      "scale": {         
         "type": "threshold",
         "domain": [2, 4, 6],
-        "range": ["#FFE4B5", "#fd8d3c", "#FF7F50", "#a63603"]
+        "range": ["#FEDEBE", "#f8b878", "#FF7F50", "#a63603"]
       }
     },
     "tooltip": [
