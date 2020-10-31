@@ -16,7 +16,7 @@
   },
   "spec": {
     "data": {
-      "url": "https://raw.githubusercontent.com/darrenKundasawmy/FIT3179/main/Assignment%202/Heat_map/2020.csv"
+      "url": "https://raw.githubusercontent.com/darrenKundasawmy/FIT3179/main/Assignment%202/scatter_plot_matrix/2020.csv"
     },
     "mark": "point",
     "selection": {
