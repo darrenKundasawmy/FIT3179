@@ -1,0 +1,24 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "height": 400,
+  "width": 500,
+  "description": "A simple donut chart with embedded data.",
+  "title": "Factor of happiness in sub saharan african countries",
+  "data": {
+    "values": [
+      {"category": "gdp per capita", "value": 0.542723182},
+      {"category": "social support", "value": 0.914581366},
+      {"category": "Healthy life expectancy", "value": 0.370414629},
+      {"category": "freedom", "value": 0.413274091},
+      {"category": "generosity", "value": 0.195591245},
+      {"category": "corruption perception", "value": 0.091621366}
+    ]
+  },
+  "mark": {"type": "arc", "innerRadius": 100},
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative"},
+    "color": {"field": "category", "type": "nominal"}
+  },
+  "view": {"stroke": null},
+  "config": {}
+}
