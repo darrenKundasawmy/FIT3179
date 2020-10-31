@@ -1,27 +1,97 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 300,
-  "height": 500,
-  "description": "A simple bar chart with embedded data.",
+  "width": 800,
+  "height": 600,
+  "title": "Happiness Score from 2015-2020",
   "data": {
     "values": [
-      {"year": "2015", "Happiness Score": 5.375734},
-      {"year": "2016", "Happiness Score": 5.382185},
-      {"year": "2017", "Happiness Score": 5.354019},
-      {"year": "2018", "Happiness Score": 5.375917},
-      {"year": "2019", "Happiness Score": 5.407096},
-      {"year": "2020", "Happiness Score": 5.47324}
+      {
+        "year": "2015",
+        "lower": 2.839,
+        "q1": 4.526,
+        "median": 5.253,
+        "q3": 6.2438,
+        "upper": 7.587,
+        "outliers": []
+      },
+      {
+        "year": "2016",
+        "lower": 2.905,
+        "q1": 4.404,
+        "median": 5.3515,
+        "q3": 6.269,
+        "upper": 7.526,
+        "outliers": []        
+      },
+      {
+        "year": "2017",
+        "lower": 2.693,
+        "q1": 4.5055,
+        "median": 5.293,
+        "q3": 6.1015,
+        "upper": 7.537,
+        "outliers": []
+      },
+      {
+      "year": "2018",
+      "lower": 2.905,
+      "q1": 4.4538,
+      "median": 5.378,
+      "q3": 6.1685,
+      "upper": 7.632,
+      "outliers": []
+      },
+      {
+      "year": "2019",
+      "lower": 2.853,
+      "q1": 4.5445,
+      "median": 5.3795,
+      "q3": 6.1845,
+      "upper": 7.769,
+      "outliers": []
+      },
+      {
+      "year": "2020",
+      "lower": 2.5669,
+      "q1": 4.7241,
+      "median": 5.5252,
+      "q3": 6.2285,
+      "upper": 7.8087,
+      "outliers": []
+      }
     ]
   },
-  "mark": "bar",
-  "encoding": {
-    "x": {"field": "year", "type": "nominal", "axis": {"labelAngle": 10}},
-    "y": {
-      "field": "Happiness Score",
-      "type": "quantitative",
-      "scale": {"domain": [5, 5.5]}
+  "encoding": {"y": {"field": "year", "type": "nominal", "title": "year"}},
+  "layer": [
+    {
+      "mark": {"type": "rule"},
+      "encoding": {
+        "x": {
+          "field": "lower",
+          "type": "quantitative",
+          "scale": {"domain": [2, 8]},
+          "title": "Happiness score"
+          
+        },
+        "x2": {"field": "upper"}
+      }
     },
-    "color": {"value": "#fdbe85"}
-  },
-  "config": {}
+    {
+      "mark": {"type": "bar", "size": 30},
+      "encoding": {
+        "x": {"field": "q1", "type": "quantitative"},
+        "x2": {"field": "q3"},
+        "color": {"field": "year", "type": "nominal", "legend": null}
+      }
+    },
+    {
+      "mark": {"type": "tick", "color": "white", "size": 14},
+      "encoding": {"x": {"field": "median", "type": "quantitative"}}
+    },
+    {
+      "transform": [{"flatten": ["outliers"]}],
+      "mark": {"type": "point", "style": "boxplot-outliers"},
+      "encoding": {"x": {"field": "outliers", "type": "quantitative"}}
+    }
+  ]
 }
