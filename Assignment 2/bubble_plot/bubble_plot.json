@@ -13,8 +13,8 @@
       "bind": {
         "input": "range",
         "min": 0,
-        "max": 8,
-        "step": 2,
+        "max": 7,
+        "step": 1,
         "name": "happiness level: "
       }
     }
@@ -48,9 +48,9 @@
           },
           "legend": {"format": ".1s"}
         },
-        "color": {"field": "Country", "type": "nominal"},
+        "color": {"field": "Regional indicator", "type": "nominal"},
         "tooltip": [
-          {"field": "Country", "type": "nominal"},
+          {"field": "Regional indicator", "type": "nominal"},
           {
             "field": "Log_GDP_per_capita",
             "type": "quantitative",
@@ -75,17 +75,8 @@
         "fontStyle": "italic"
       },
       "encoding": {
-        "text": {"field": "Country", "type": "nominal"},
-        "color": {"value": "black"},
-        "opacity": {
-          "condition": {
-            "test": "datum['Country'] == 'Finland' || datum['Country'] == 'Singapore' || datum['Country'] == 'Australia' || datum['Country'] == 'New Zealand' || datum['Country'] == 'Italy' || datum['Country'] == 'Malaysia' ||  datum['Country'] == 'United States'",
-            "value": 1
-          },
-          "value": 0
-        },
         "tooltip": [
-          {"field": "Country", "type": "nominal"},
+          {"field": "Regional indicator", "type": "nominal"},
           {
             "field": "Log_GDP_per_capita",
             "type": "quantitative",
