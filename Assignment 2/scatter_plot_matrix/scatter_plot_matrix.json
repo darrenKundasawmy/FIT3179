@@ -4,11 +4,10 @@
     "row": [
       "Ladder score" ,
       "Log GDP per capita",
-      "Social support",
-      "Healthy life expectancy"
+      "Social support"
     ],
     "column": [
-      "Healthy life expectancy",
+      
       "Social support",
       "Log GDP per capita",
       "Ladder score"
