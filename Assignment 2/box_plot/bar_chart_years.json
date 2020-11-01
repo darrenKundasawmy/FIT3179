@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 200,
+  "width": 400,
   "height": 350,
   "title": "Happiness Score from 2015-2020",
   "data": {
