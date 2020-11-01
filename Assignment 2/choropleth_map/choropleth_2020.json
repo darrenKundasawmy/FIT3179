@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Happiness level around the world",
-  "width": 550,
-  "height": 350,
+  "width": 400,
+  "height": 300,
   "projection": {"type": "equalEarth"},
   "data": {
     "url": "https://raw.githubusercontent.com/darrenKundasawmy/FIT3179/main/Assignment%202/choropleth_map/ne_110m_admin_0_countries.topojson",
