@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 450,
+  "width": 440,
   "height": 350,
   "title": "life expectancy against gdp per capita in 2020",
   "data": {
