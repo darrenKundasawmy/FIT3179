@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "height": 370,
+  "height": 500,
   "width": 400,
   "description": "A simple donut chart with embedded data.",
   "title": "Factor of happiness in sub saharan african countries",
